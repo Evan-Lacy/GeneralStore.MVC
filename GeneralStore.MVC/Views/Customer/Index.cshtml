@@ -1,0 +1,49 @@
+﻿@model IEnumerable<GeneralStore.MVC.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            <!--Display the product ID number-->
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+        <th>
+            <!--Display the First Name of the customer-->
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            <!--Display the Last Name of the Customer-->
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                <!--Ask for the First Name of the Customer-->
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                <!--Ask for the Last Name of the Customer-->
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CustomerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CustomerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CustomerId }) |
+            </td>
+        </tr>
+    }
+</table>
