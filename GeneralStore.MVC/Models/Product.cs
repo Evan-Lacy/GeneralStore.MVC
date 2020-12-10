@@ -22,5 +22,8 @@ namespace GeneralStore.MVC.Models
         [Required]
         [Display(Name = "It is food")]
         public bool IsFood { get; set; }
+
+        //Products can now hold a list of all the reviews left by customers on them.
+        public virtual List<Review> Reviews { get; set; } = new List<Review>();
     }
 }
